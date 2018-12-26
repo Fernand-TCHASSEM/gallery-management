@@ -1,0 +1,126 @@
+.no-padding {
+    padding: 0px!important;
+}
+
+.uploadArea {
+    border: solid 1px #b6bbc1;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    margin-bottom: 20px!important;
+    cursor: pointer;
+    max-width: 130px;
+    border-radius: 3px;
+    height: 100px;
+    width: 100px;
+}
+
+.uploadArea .new {
+    padding-top: 15px!important;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.uploadArea input[type='file'] {
+    height: 30px;
+    color: transparent;
+}
+
+.uploadArea i {
+    font-size: 35px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.image-preview .remove {
+    text-align: right;
+    color: white;
+    position: absolute;
+    width: 100%;
+    padding-right: 7px;
+    background-color: #373435;
+    opacity: .4;
+    height: 25px;
+}
+
+.image-preview img {
+    padding-top: 0px!important;
+    width: 100px;
+    height: 100px;
+}
+
+#mainPicture {
+    border: solid 1px #b6bbc1;
+    border-radius: 3px;
+    position: relative;
+}
+
+#mainPicture img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.image-preview .remove i {
+    font-size: 60% !important;
+}
+
+.image-preview .remove {
+    height: 15px !important;
+    width: 15px !important;
+    right: 0;
+}
+
+.radix_input_submit button[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #404040 !important;
+    color: #404040;
+    font-weight: 500;
+    border: none;
+    font-size: 13px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.radix_input_submit button[type="submit"]:hover {
+    background-color: #404040;
+    color: #fff;
+}
+
+.radix_input_item button::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item button::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item button:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item button:-moz-placeholder {
+    /* Firefox 18- */
+    color: #808080;
+    opacity: 1;
+}

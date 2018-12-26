@@ -1,0 +1,1445 @@
+/*
+Theme Name: Radix
+Theme URI: http://themeroots.com/themes/radix
+Author: ThemeRoots
+Author URI: http://themeroots.com
+Description: The Ultimate Minimal Portfolio Theme
+Version: 1.0.0
+*/
+
+html,
+body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: #707070;
+    background-color: #fff;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+a,
+a:active,
+a:focus,
+a:active {
+    text-decoration: none !important
+}
+
+input {
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a:hover,
+a:focus,
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+select:active,
+textarea:focus,
+textarea:hover,
+button:focus {
+    outline: none;
+}
+
+input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+textarea {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #999;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+dl {
+    margin-bottom: 1.6em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-bottom: 1.6em;
+}
+
+table,
+th,
+td {
+    border: 1px solid #eaeaea;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 1.6em;
+    table-layout: fixed;
+    /* Prevents HTML tables from becoming too wide */
+    width: 100%;
+}
+
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+
+th {
+    border-width: 0 1px 1px 0;
+    font-weight: 700;
+}
+
+td {
+    border-width: 0 1px 1px 0;
+}
+
+th,
+td {
+    padding: 0.4em;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+iframe {
+    width: 100%;
+}
+
+
+
+/*--------------------------------------------------------
+radix HOME PAGE STYLESHEET
+--------------------------------------------------------*/
+
+/*--------------------------------------------------------
+radix HEADER AREA
+--------------------------------------------------------*/
+
+header.radix_header_area {
+    padding: 42px 0;
+    position: relative;
+}
+
+.radix_logo img {
+    width: 150px;
+}
+
+.radix_menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.radix_menu ul li {
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    padding: 10px 0;
+}
+
+.radix_menu ul li:first-child {
+    margin-left: 0;
+}
+
+.radix_menu ul li:last-child {
+    margin-right: 0;
+}
+
+.radix_menu ul li a {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase;
+    transition: all 0.4s;
+}
+
+.radix_menu ul li a:hover {
+    color: #afafaf;
+}
+
+.radix_menu ul>li>ul {
+    position: absolute;
+    min-width: 200px;
+    padding: 8px 0;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    background-color: #585858;
+    transition: all .3s;
+    margin-top: 5px;
+    z-index: 99;
+}
+
+.radix_menu ul>li>ul li a {
+    color: #ffffff;
+    display: block;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.radix_menu ul>li>ul li a:hover {
+    color: #ffffff;
+}
+
+.radix_menu ul>li>ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, .25);
+}
+
+.radix_menu ul>li>ul li:first-child {
+    border-top: 0px solid rgba(255, 255, 255, 0);
+}
+
+.radix_menu ul>li:hover>ul {
+    opacity: 1;
+    transform: translateY(10px);
+    visibility: visible;
+}
+
+.radix_menu ul ul li>ul {
+    left: 100%;
+    top: -11px;
+}
+
+.radix_menu ul ul li:hover ul {}
+
+.radix_section_title {
+    padding: 61px 0 60px;
+}
+
+.radix_section_title.radix_about_page {
+    margin-right: 360px;
+}
+
+.radix_section_title h2 {
+    font-size: 30px;
+    color: #252525;
+    margin: 0 0 25px;
+}
+
+.radix_section_title p {
+    color: #606060;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.radix_section_title span {
+    color: #606060;
+    font-weight: 300;
+}
+
+.mean-container .mean-bar {
+    background: transparent;
+}
+
+.mean-container a.meanmenu-reveal {
+    width: 30px;
+    height: 30px;
+    padding: 8px 13px 8px;
+    color: #252525;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.mean-container a.meanmenu-reveal span {
+    background: #252525;
+    margin-top: 5px;
+}
+
+.mean-container .mean-nav {
+    background: #252525;
+}
+
+.mean-container .mean-nav ul li a.mean-expand {
+    height: 24px;
+    line-height: 24px;
+}
+
+/*--------------------------------------------------------
+radix GALLERY AREA
+--------------------------------------------------------*/
+
+.radix_gallery_area {
+    padding: 0 0 70px;
+}
+
+.radix_gallery_wrap {
+    margin-left: -30px;
+}
+
+.radix_gallery_single_item {
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    transition: all 0.7s ease-in-out;
+}
+
+.radix-even-gallery .radix_gallery_img {
+    height: 300px;
+}
+
+.radix-even-gallery .radix_gallery_img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.radix_gallery_menu {
+    margin-bottom: 40px;
+}
+
+.watch-gallery-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.watch-gallery-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.watch-gallery-nav ul li:first-child {
+    margin-left: 0;
+}
+
+.watch-gallery-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.watch-gallery-nav ul li a {
+    display: block;
+    color: #707070;
+    transition: all 0.4s;
+    font-size: 13px;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.watch-gallery-nav ul li a:hover {
+    color: #252525;
+}
+
+.watch-gallery-nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #252525;
+    bottom: -5px;
+    left: 0;
+    transition: all 0.4s;
+}
+
+.watch-gallery-nav ul li a:hover::before {
+    width: 100%;
+}
+
+.radix_gallery_img {
+    position: relative;
+}
+
+.radix_gallery_img img {
+    width: 100%;
+}
+
+.radix_galley_hover_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.radix_portfolio_wrap .radix_galley_hover_content {
+    top: 93.6%;
+    width: 100%;
+    height: 13%;
+    background-color: #fff;
+}
+
+.radix_gallery_single_item:hover .radix_galley_hover_content {
+    opacity: 1;
+}
+
+.radix_galley_hover_content h3 {
+    font-size: 15px;
+    color: #404040;
+    margin: 0 0 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.radix_portfolio_wrap .radix_galley_hover_content h3 {
+    margin-bottom: 0;
+}
+
+.radix_galley_hover_content p {
+    font-size: 12px;
+    color: #404040;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mfp-bottom-bar {
+    display: none;
+}
+
+.radix_btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.radix_default_btn {
+    color: #404040 !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    border: 1px solid #404040;
+    padding: 12px 25px;
+    display: inline-block;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    transition: all 0.4s;
+}
+
+.radix_default_btn:hover {
+    background-color: #404040;
+    color: #fff !important;
+}
+
+/*--------------------------------------------------------
+radix FOOTER AREA
+--------------------------------------------------------*/
+
+footer.radix_footer_area {
+    padding: 50px 0 38px;
+}
+
+.radix_copy_right p {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+
+.radix_social_icon ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.radix_social_icon ul li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.radix_social_icon ul li:first-child {
+    margin-left: 0;
+}
+
+.radix_social_icon ul li:last-child {
+    margin-right: 0;
+}
+
+.radix_social_icon ul li a {
+    color: #505050;
+    font-size: 14px;
+    transition: all 0.4s;
+}
+
+.radix_social_icon ul li a:hover {
+    color: #afafaf;
+}
+
+/*--------------------------------------------------------
+radix ABOUT PAGE STYLESHEET
+--------------------------------------------------------*/
+
+.radix_about_area {
+    padding: 70px 0 35px;
+}
+
+.radix_about_single_img {
+    margin-bottom: 35px;
+}
+
+.radix_about_area .radix_social_icon {
+    text-align: center;
+}
+
+.radix_about_area .radix_social_icon ul li a {
+    font-size: 20px;
+}
+
+.radix_about_content {
+    margin-left: 40px;
+}
+
+.radix_about_content h3 {
+    color: #000;
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    letter-spacing: 2px;
+}
+
+.radix_about_content p {
+    color: #707070;
+    margin: 0 0 50px;
+    line-height: 1.7;
+}
+
+ul.radix_about_service {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.radix_about_service li {
+    margin: 15px 0;
+}
+
+ul.radix_about_service li:first-child {
+    margin-top: 0;
+}
+
+ul.radix_about_service li:last-child {
+    margin-bottom: 0;
+}
+
+ul.radix_about_service li a {
+    font-size: 16px;
+    color: #707070;
+}
+
+.radix_about_service i {
+    margin-right: 15px;
+}
+
+/*--------------------------------------------------------
+radix PORTFOLIO PAGE STYLESHEET
+--------------------------------------------------------*/
+
+.radix_portfolio_area {
+    padding: 70px 0 40px;
+}
+
+.radix_portfolio_content {
+    margin-right: 21px;
+    margin-bottom: 60px;
+}
+
+
+
+.portfolio_meta {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.portfolio_meta span {
+    margin: 0 15px;
+}
+
+.radix_portfolio_content p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+.radix_portfolio_content h2 {
+    color: #454545;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 5px 0 7px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.radix_portfolio_content .portfolio_meta {
+    margin-bottom: 25px;
+}
+
+/*--------------------------------------------------------
+radix BLOG PAGE STYLESHEET
+--------------------------------------------------------*/
+
+.radix_blog_area {
+    padding: 72px 0 68px;
+}
+
+.radix_blog_single_item {
+    background-color: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+    padding: 33px 0 47px 0;
+    margin-bottom: 60px;
+}
+
+.radix_blog_title {
+    margin-bottom: 38px;
+    margin-left: 30px;
+}
+
+.radix_blog_title h2 {
+    color: #454545;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 0 5px;
+}
+
+.radix_blog_title p {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.radix_blog_title span {
+    margin: 0 10px;
+}
+
+.radix_blog_single_img {
+    margin-bottom: 42px;
+}
+
+.radix_blog_bottom_content {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.radix_blog_bottom_content p {
+    margin: 0 0 30px;
+    line-height: 1.7;
+}
+
+.blog_read_more {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #454545 !important;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.blog_read_more span {
+    margin-right: 10px;
+    transition: all 0.4s;
+}
+
+.blog_read_more:hover span {
+    margin-right: 15px;
+}
+
+.radix_search {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.radix_search input[type="email"] {
+    background-color: transparent;
+    width: 100%;
+    height: 55px;
+    padding: 0 25px !important;
+    border: none !important;
+    border-radius: 3px;
+    font-size: 18px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.radix_search button {
+    background-color: transparent;
+    color: #828c92;
+    top: 50%;
+    right: 0;
+    padding: 0 20px;
+    position: absolute;
+    border: none;
+    height: 55px;
+    font-size: 15px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.radix_search input[type="email"]::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_search input[type="email"]::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_search input[type="email"]:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_search input[type="email"]:-moz-placeholder {
+    /* Firefox 18- */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_blog_sidebar_item {
+    background-color: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+    margin-bottom: 45px;
+    padding: 40px 30px;
+}
+
+.radix_blog_sidebar_title {
+    margin-bottom: 35px;
+}
+
+.radix_blog_sidebar_title h3 {
+    color: #454545;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.radix_blog_content p {
+    color: #9d9d9d;
+    font-size: 14px;
+    margin: 0 0 5px;
+}
+
+.radix_blog_content h2 {
+    font-size: 16px;
+    color: #707070;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    transition: all 0.4s;
+}
+
+.radix_blog_content h2:hover {
+    color: #454545;
+}
+
+.redex_blog_recent_post {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.redex_blog_recent_post:last-child {
+    margin: 0;
+}
+
+.radix_blog_img {
+    flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+ul.radix_category {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.radix_category li {
+    margin: 20px 0;
+}
+
+ul.radix_category li:first-child {
+    margin-top: 0;
+}
+
+ul.radix_category li:last-child {
+    margin-bottom: 0;
+}
+
+ul.radix_category li a {
+    color: #707070;
+    transition: all 0.4s;
+}
+
+ul.radix_category li a:hover {
+    color: #454545;
+}
+
+.radix_category i {
+    margin-right: 10px;
+}
+
+.radix_blog_navigation {
+    text-align: center;
+}
+
+.radix_blog_navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.radix_blog_navigation ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.radix_blog_navigation ul li a {
+    font-size: 15px;
+    color: #454545;
+    font-weight: 500;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    display: block;
+    transition: all 0.4s;
+}
+
+.radix_blog_navigation ul li a:hover {
+    border: 1px solid #CCCCCC;
+}
+
+.black_bg {
+    background-color: #454545;
+    border-radius: 3px;
+}
+
+.radix_blog_navigation i {
+    color: #fff;
+}
+
+.radix_single_blog .radix_blog_bottom_content {
+    margin-right: 16px;
+}
+
+.radix_share_blog {
+    margin-left: 30px;
+    padding-top: 7px;
+    padding-bottom: 2px;
+}
+
+.radix_share_blog h3 {
+    color: #454545;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 30px;
+}
+
+/*
+.radix_share_blog .radix_social_icon ul li {
+    margin: 0 8px;
+}
+*/
+
+.radix_single_blog_comment h3 {
+    font-size: 24px;
+    color: #454545;
+    font-weight: 400;
+    margin: 0 0 35px;
+}
+
+.radix_single_blog_comment_wrap {
+    display: flex;
+}
+
+.radix_user_comment {
+    margin-right: 30px;
+    flex: 0 0 auto;
+}
+
+.radix_user_comment img {
+    border-radius: 100%;
+}
+
+.radix_user_content {
+    margin-right: 26px;
+}
+
+.radix_user_content h3 {
+    font-size: 18px;
+    color: #454545;
+    font-weight: 500;
+    margin: 0 0 15px;
+}
+
+.radix_user_content span {
+    font-size: 14px;
+    margin-left: 15px;
+    color: #808080;
+}
+
+.radix_user_content p {
+    font-size: 18px;
+    margin: 0 0 20px;
+    line-height: 1.6;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.radix_repay {
+    font-size: 16px;
+    color: #606060 !important;
+    margin: 0;
+    font-weight: 500;
+}
+
+.radix_repay i {
+    margin-left: 5px;
+}
+
+.radix_comment_box {
+    padding: 49px 0 0 0;
+}
+
+.radix_comment_box h3 {
+    font-size: 24px;
+    color: #454545;
+    font-weight: 400;
+    margin: 0 0 40px;
+}
+
+.radix_comment_form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.radix_input_item {
+    margin-bottom: 20px;
+    flex: 0 0 48%;
+}
+
+.radix_input_item input {
+    background-color: transparent;
+    width: 100%;
+    border: none !important;
+    border: 1px solid #DDDDDD !important;
+    padding: 13px 25px !important;
+    font-size: 13px;
+    border-radius: 5px;
+    color: #707070;
+    transition: all 0.4s ease-in-out;
+}
+
+.radix_input_item textarea {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border: 1px solid #DDDDDD;
+    padding: 12px 25px;
+    font-size: 13px;
+    border-radius: 3px;
+    height: 150px;
+    color: #707070;
+    resize: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.radix_input_submit {
+    display: inline-block;
+}
+
+.radix_input_submit input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #404040 !important;
+    color: #404040;
+    font-weight: 500;
+    border: none;
+    font-size: 13px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.radix_input_submit input[type="submit"]:hover {
+    background-color: #404040;
+    color: #fff;
+}
+
+.radix_input_item input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #808080;
+    opacity: 1;
+}
+
+.radix_input_item textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: #808080;
+    opacity: 1;
+}
+
+
+/*--------------------------------------------------------
+radix CONTACT PAGE STYLESHEET
+--------------------------------------------------------*/
+
+.radix_contact_form_area {
+    padding: 0 0 70px;
+}
+
+.radix_info_item {
+    display: flex;
+}
+
+.radix_info_content h3 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+}
+
+.radix_info_content p {
+    color: #707070;
+    margin: 0;
+}
+
+.radix_info_icon {
+    margin-right: 25px;
+}
+
+.radix_info_icon i {
+    border: 1px solid #ECECEC;
+    color: #404040;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100%;
+}
+
+/*--------------------------------------------------------
+radix Responsive
+--------------------------------------------------------*/
+/*For bigger screen then normal 960px desktop*/
+
+@media (min-width: 1024px) {
+
+    .radix-even-gallery#radix_gallery_two_column .radix_gallery_img {
+        height: 435px;
+    }
+}
+
+@media only screen and (max-width: 1199px) {}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+
+    .radix_about_content {
+        margin-left: 20px;
+        padding: 0;
+    }
+
+    .radix_section_title.radix_about_page {
+        margin-right: 235px;
+    }
+
+}
+
+/*For Tablet Layout*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .radix_menu ul li {
+        margin: 0 15px;
+    }
+
+    .radix_section_title {
+        padding: 50px 0 70px;
+        margin-right: 28px;
+    }
+
+    .radix_gallery_area {
+        padding: 0 0 40px;
+    }
+
+    /*ABOUT PAGE*/
+    .radix_section_title.radix_about_page {
+        margin-right: 0;
+    }
+
+    .radix_about_area {
+        padding: 0 0 70px;
+    }
+
+    .radix_about_content {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    /*BLOG PAGE*/
+    .radix_blog_area {
+        padding: 0 0 70px;
+    }
+
+    .radix_blog_title h2 {
+        font-size: 24px;
+    }
+
+    .radix_blog_content h2 {
+        font-size: 15px;
+    }
+
+    .radix_comment_form {
+        display: block;
+    }
+
+    /*PORTFOLIO PAGE*/
+    .radix_portfolio_area {
+        padding: 0 0 40px;
+    }
+
+
+    /*CONTACT PAGE*/
+    .radix_info_item {
+        display: block;
+        text-align: center;
+    }
+
+    .radix_contact_form_area {
+        padding: 0 0 50px;
+    }
+
+    .radix_info_icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
+
+/*For Wide Mobile Layout*/
+
+@media (max-width: 767px) {
+    .radix_header_area .col-sm-6 {
+        width: 50%;
+    }
+
+    .radix_menu {
+        display: none;
+    }
+
+    .mean-container .mean-nav {
+        background: #252525;
+        width: calc(100% + 100px);
+        position: relative;
+        left: -100px;
+    }
+
+    header.radix_header_area {
+        padding: 20px 0 30px;
+        position: relative;
+    }
+
+    .radix_social_icon ul li {
+        margin: 0 5px;
+    }
+
+    .radix_section_title {
+        padding: 40px 0 70px;
+        margin-right: 0;
+    }
+
+    .radix_section_title h2 {
+        font-size: 30px;
+    }
+
+    .radix_section_title p {
+        font-size: 18px;
+    }
+
+    .radix_gallery_area {
+        padding: 0 0 40px;
+    }
+
+    .watch-gallery-nav ul li {
+        margin: 0 12px;
+    }
+
+    /*ABOUT PAGE*/
+    .radix_section_title.radix_about_page {
+        margin-right: 0;
+    }
+
+    .radix_about_area {
+        padding: 0 0 37px;
+    }
+
+    .radix_about_content {
+        margin-left: 0;
+        padding-top: 45px;
+    }
+
+    /*BLOG PAGE*/
+    .radix_blog_area {
+        padding: 0;
+    }
+
+    .radix_blog_title {
+        margin-left: 20px;
+    }
+
+    .radix_blog_bottom_content {
+        margin-left: 20px;
+    }
+
+    .radix_blog_title h3 {
+        font-size: 24px;
+    }
+
+    .radix_blog_sidebar {
+        margin-top: 60px;
+    }
+
+    .radix_blog_bottom_content p {
+        font-size: 16px;
+    }
+
+    .blog_read_more {
+        font-size: 14px;
+    }
+
+    .radix_comment_form {
+        display: block;
+    }
+
+    .radix_user_content p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .radix_comment_box {
+        padding: 60px 0 0 0;
+    }
+
+    /*PORTFOLIO PAGE*/
+    .radix_portfolio_area {
+        padding: 0 0 30px;
+    }
+
+    .radix_portfolio_content {
+        margin-right: 0;
+    }
+
+    .radix_portfolio_content p {
+        font-size: 16px;
+    }
+
+    .radix_portfolio_content h2 {
+        font-size: 24px;
+    }
+
+    /*CONTACT PAGE*/
+    .radix_contact_form_area {
+        padding: 0 0 30px;
+    }
+
+    .radix_input_submit input[type="submit"] {
+        font-size: 16px;
+        padding: 16px 25px;
+    }
+
+    .radix_info_item {
+        display: block;
+        text-align: center;
+    }
+
+    .info_bottom {
+        margin-bottom: 30px;
+    }
+
+    .radix_info_icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
+/*For 320-384px up Mobile Layout*/
+
+@media (max-width: 479px) {
+
+    .mean-container .mean-nav {
+        width: 100vw;
+        position: relative;
+        left: 15px;
+    }
+
+    .radix_section_title {
+        padding: 20px 0 45px;
+    }
+
+    .radix_section_title h2 {
+        font-size: 25px;
+    }
+
+    .radix_gallery_area {
+        text-align: center;
+    }
+
+    .radix_gallery_menu {
+        margin-bottom: 35px;
+    }
+
+    .watch-gallery-nav ul li {
+        margin: 0 8px;
+    }
+
+    footer.radix_footer_area {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .radix_copy_right {
+        margin-bottom: 20px;
+    }
+
+    .radix_social_icon {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    /*BLOG PAGE*/
+    .radix_blog_single_item {
+        padding: 25px 0;
+    }
+
+    .radix_blog_title h2 {
+        font-size: 24px;
+    }
+
+    .radix_blog_title h2 {
+        font-size: 22px;
+    }
+
+    .radix_blog_img {
+        margin-bottom: 20px;
+    }
+
+    .radix_single_blog_comment_wrap {
+        display: block;
+    }
+
+    .radix_user_comment {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .radix_single_blog_comment h3 {
+        font-size: 22px;
+    }
+
+    .radix_comment_box h3 {
+        font-size: 22px;
+    }
+
+    .radix_input_submit input[type="submit"] {
+        font-size: 14px;
+        padding: 16px 15px;
+    }
+
+    .radix_blog_area .radix_social_icon {
+        text-align: left;
+    }
+
+    .redex_blog_recent_post {
+        display: block;
+    }
+
+    .radix_portfolio_content p {
+        font-size: 15px;
+    }
+
+    .portfolio_meta span {
+        margin: 0 5px;
+    }
+
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+    font-weight: unset;
+}

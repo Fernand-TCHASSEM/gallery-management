@@ -1,0 +1,29 @@
+.radix_blog_content img {
+    cursor: pointer;
+}
+
+.to-load {
+    width: 80px;
+    height: 70px;
+    max-width: 100%;
+}
+
+#main-picture {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.radix_blog_single_img {
+    border: solid 1px #b6bbc1;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    height: 59.6vh;
+}
+
+.
