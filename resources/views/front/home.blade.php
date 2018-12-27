@@ -12,7 +12,7 @@
 
     <meta name="url-get-gallery" content="{{ url('/') }}">
 
-    <meta name="url-loader-gallery" content="{{URL::asset('/img/rolling.gif')}}">
+    <meta name="url-loader-gallery" content="{{URL::asset('/img/rolling.svg')}}">
 
     <!-- Bootstrap CSS -->
     {!! Html::style('css/base/plugins.css') !!}

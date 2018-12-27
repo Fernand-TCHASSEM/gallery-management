@@ -8,7 +8,7 @@
 
     <meta name="url-api-get-gallery" content="{{ url('/api/gallery') }}">
 
-    <meta name="url-loader-gallery" content="{{URL::asset('/img/rolling.gif')}}">
+    <meta name="url-loader-gallery" content="{{URL::asset('/img/rolling.svg')}}">
 
     <meta name="url-hover-gallery" content="{{URL::asset('js/plugins/nsHover/imgs/lens.png')}}">
 
