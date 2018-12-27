@@ -40,7 +40,7 @@ jQuery(document).ready(function () {
 
                             generatePagination(pageCount, requestedPage);
 
-                            urlToSet = $('meta[name="url-api-get-gallery"]').attr('content') + (requestedPage > 1 ? '?page='+requestedPage : '');
+                            urlToSet = $('meta[name="url-admin-dashboard"]').attr('content') + (requestedPage > 1 ? '?page='+requestedPage : '');
 
                             history.replaceState({}, 'Dashboard', urlToSet);
 
