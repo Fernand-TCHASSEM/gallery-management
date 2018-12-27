@@ -38,7 +38,6 @@ class GalleryRequest extends APIRequest
             ];
         } elseif ($verb === 'PUT') {
             $id = $this->route('gallery');
-            $this->merge(['id' => $id]);
 
             return [
                 'id' => 'bail|required|exists:galleries,id',

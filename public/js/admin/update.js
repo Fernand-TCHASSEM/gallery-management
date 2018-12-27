@@ -129,6 +129,7 @@ jQuery(document).ready(function () {
                         title: 'Non-existent gallery',
                         text: response.description
                     });
+                    window.location.href = $('meta[name="url-admin-dashboard"]').attr('content');
                 } else {
                     console.log(response)
                 }
@@ -166,6 +167,7 @@ jQuery(document).ready(function () {
                         'Authorization': userData.token
                     },
                     data: JSON.stringify({
+                        id: galleryId,
                         name: $('#title').val(),
                         description: tinyMCE.get('tinyArea').getContent(),
                         pictures: basesFill
