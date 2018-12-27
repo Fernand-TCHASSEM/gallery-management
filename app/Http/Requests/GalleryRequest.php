@@ -41,7 +41,7 @@ class GalleryRequest extends APIRequest
             $this->merge(['id' => $id]);
 
             return [
-                'id' => 'bail|required|unique:galleries,id',
+                'id' => 'bail|required|exists:galleries,id',
                 'name' => ['bail', 'sometimes', 'required', 'string', 'max:100', Rule::unique('galleries')->ignore($id), ],
                 'description' => 'bail|sometimes|string',
                 'pictures' => 'bail|required|array',
