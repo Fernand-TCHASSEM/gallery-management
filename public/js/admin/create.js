@@ -64,10 +64,13 @@ jQuery(document).ready(function () {
                                 },
                                 'json');
                         } else if (response.code === 4000) {
+                            var concerned = Object.keys(response.errors)[0],
+                            errors = response.errors[concerned];
+                            $btnSubmit.removeAttr('disabled', true).removeClass('running');
                             swal({
                                 type: 'error',
                                 title: 'Inavlid inputs',
-                                text: response.description
+                                text: errors[0]
                             })
                         } else {
                             console.log(response)

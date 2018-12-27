@@ -50,7 +50,7 @@
                       Log In
                       <div class="ld ld-ring ld-spin"></div>
                     </button>
-                    <div class="alert alert-danger mt-4 d-none" role="alert" id="login-alert"></div>
+                    <div class="alert alert-danger mt-4 d-none  text-center" role="alert" id="login-alert"></div>
                 </form>
             </div>
         </div>

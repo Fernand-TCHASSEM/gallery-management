@@ -73,7 +73,10 @@ jQuery(document).ready(function () {
                     function (resultat, statut, erreur) {
                         var resultatFormatted = resultat.responseJSON;
                         if (resultatFormatted.code === 4000) {
-                            $alert.text(resultatFormatted.description);
+                            var concerned = Object.keys(resultatFormatted.errors)[0],
+                                errors = resultatFormatted.errors[concerned];
+                                $btnSubmit.removeAttr('disabled', true).removeClass('running');
+                            $alert.text(errors[0]);
                         } else if (resultatFormatted.code === 4001) {
                             $alert.text('Invalid username or password.');
                         } else {

@@ -3,10 +3,13 @@
 namespace App\Http\Requests;
 
 use Illuminate\Validation\Rule;
-use Illuminate\Foundation\Http\FormRequest;
+use App\Extensions\Requests\APIRequest;
 
-class GalleryRequest extends FormRequest
+class GalleryRequest extends APIRequest
 {
+
+    protected $firstError = true;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -38,6 +41,7 @@ class GalleryRequest extends FormRequest
             $this->merge(['id' => $id]);
 
             return [
+                'id' => 'bail|required|unique:galleries,id',
                 'name' => ['bail', 'sometimes', 'required', 'string', 'max:100', Rule::unique('galleries')->ignore($id), ],
                 'description' => 'bail|sometimes|string',
                 'pictures' => 'bail|required|array',
