@@ -92,11 +92,10 @@ class GalleryController extends Controller
     public function update(GalleryRequest $request, $id)
     {
         $inputs = $request->validated();
-        $gallery = $this->repository->update($inputs, $id);
+        $gallery = $this->repository->modify($inputs, $id);
 
         return response()->json([
-            'code' => self::HTTP_SUCCESS,
-            'id' => $gallery->id
+            'code' => self::HTTP_SUCCESS
         ], self::HTTP_SUCCESS);
     }
 

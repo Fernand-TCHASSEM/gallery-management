@@ -35,7 +35,7 @@
     {!! Html::style('js/plugins/uploadHBR/css/style.min.css') !!}
     {!! Html::style('js/plugins/sweetAlert/sweetalert.css') !!}
     {!! Html::style('css/admin/dashboard.css') !!}
-    {!! Html::style('css/admin/create.css') !!}
+    {!! Html::style('css/admin/update.css') !!}
 </head>
 
 <body>
@@ -77,8 +77,8 @@
     <div class="radix_section_title_area">
         <div class="container">
             <div class="radix_section_title">
-                <h2>Create Cat</h2>
-                <p>Create cat add pictures etc </p>
+                <h2>Update Cat</h2>
+                <p>Update cat add pictures etc </p>
             </div>
         </div>
         <!--End container -->
@@ -88,9 +88,7 @@
     <div class="radix_section_title_area">
         <div class="container">
             <form role="form" id="form-gallery" enctype="multipart/form-data" class="col">
-                {{--
-                <form role="form" id="form_addSlide" enctype="multipart/form-data"></form> --}}
-
+                <input type="hidden" id="id-gallery" value="{{$id}}">
                 <div class="row">
                     <div class="col-4" id="mainPicture">
                         <img class="to-load" alt="">
@@ -111,7 +109,7 @@
                                         </div>
                                         <div class="radix_input_submit">
                                             <button class="ld-ext-right" type="submit" id="btn-submit">
-                                                Create Cat
+                                                Update Cat
                                                 <div class="ld ld-ring ld-spin"></div>
                                             </button>
                                         </div>
@@ -172,7 +170,7 @@
     {!! Html::script('js/plugins/unveil/jquery.unveil.js') !!}
     {!! Html::script('js/plugins/sweetAlert/sweetalert.min.js') !!}
     {!! Html::script('js/plugins/uploadHBR/js/uploadHBR.min.js') !!}
-    {!! Html::script('js/admin/create.js') !!}
+    {!! Html::script('js/admin/update.js') !!}
     <!--End ALL JS -->
 </body>
 

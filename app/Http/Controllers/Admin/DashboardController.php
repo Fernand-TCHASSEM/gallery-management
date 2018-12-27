@@ -30,5 +30,17 @@ class DashboardController extends Controller {
         
         return redirect('admin');
     }
-    
+
+    public function update (Request $request, $id) {
+
+        if (session()->has('user')) {
+
+            return view('admin.update', [
+                'id' => $id
+            ]);
+        }
+        
+        return redirect('admin');
+    }
+
 }

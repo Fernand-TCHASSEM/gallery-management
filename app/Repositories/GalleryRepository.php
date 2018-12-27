@@ -6,6 +6,7 @@ use Log;
 use App\Models\Gallery;
 use App\Bases\Traits\BaseRepository;
 use App\Services\UploadFileService;
+use function GuzzleHttp\json_decode;
 
 class GalleryRepository
 {
@@ -29,10 +30,12 @@ class GalleryRepository
         return $gallery;
     }
 
-    public function update($arg, $id)
+    public function modify($arg, $id)
     {
 
-        $arg['pictures'] = json_encode($arg['pictures']);
+        $filePaths = (new UploadFileService())->makeFromBase64Encode($arg['pictures']);
+
+        $arg['pictures'] = json_encode($filePaths);
 
         $gallery = $this->update($arg, $id);
 

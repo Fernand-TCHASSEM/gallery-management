@@ -1,7 +1,8 @@
 jQuery(document).ready(function () {
 
-    var $formGallery = $('form-gallery'),
+    var $formGallery = $('#form-gallery'),
         $btnSubmit = $('#btn-submit'),
+        loaderURL = $('meta[name="url-loader-gallery"]').attr('content'),
         userData = JSON.parse(localStorage.getItem('user'));
 
     $formGallery.validate({
@@ -9,17 +10,13 @@ jQuery(document).ready(function () {
             'title': {
                 required: true,
                 minlength: 3
-            },
-            'tinyArea': {
-                required: true,
-                minlength: 5
             }
         }
     });
 
     $btnSubmit.on('click', function (e) {
         e.preventDefault();
-        if ($(this).valid()) {
+        if ($formGallery.valid() && tinyMCE.get('tinyArea').getContent()) {
             var $bases = $("input[name='bases[]']"),
                 basesFill = $.map($bases, function (base, index) {
                     var $inputBase = $(base);
@@ -45,11 +42,13 @@ jQuery(document).ready(function () {
                     }),
                     beforeSend: function () {
                         $btnSubmit.attr('disabled', true).addClass('running');
+                        $('#areaErrorLabel').hide();
                     },
                     success: function (result) {
                         if (result.code === 201) {
                             $btnSubmit.removeAttr('disabled').removeClass('running');
                             window.location.href = $('meta[name="url-admin-dashboard"]').attr('content');
+                            $('#areaErrorLabel').hide();
                         }
                     },
                     error: function (response) {
@@ -59,6 +58,7 @@ jQuery(document).ready(function () {
                                 $('meta[name="url-admin-login"]').attr('content'),
                                 function (data) {
                                     if (data.code === 200) {
+                                        localStorage.removeItem('user');
                                         window.location.href = $('meta[name="url-admin-login"]').attr('content');
                                     }
                                 },
@@ -82,7 +82,9 @@ jQuery(document).ready(function () {
                 })
             }
         } else {
-
+            if (!tinyMCE.get('tinyArea').getContent()) {
+                $('#areaErrorLabel').text('This field is required.').show();
+            }
         }
     });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class GalleryRequest extends FormRequest
@@ -34,18 +35,18 @@ class GalleryRequest extends FormRequest
             ];
         } elseif ($verb === 'PUT') {
             $id = $this->route('gallery');
-            $this->request->add(['id' => $id]);
+            $this->merge(['id' => $id]);
 
             return [
-                'id' => 'bail|required|string|exists:galleries,id',
-                'name' => ['bail', 'sometimes', 'required', 'string', 'max:100', Rule::unique('galleries')->ignore($user->id), ],
+                'name' => ['bail', 'sometimes', 'required', 'string', 'max:100', Rule::unique('galleries')->ignore($id), ],
                 'description' => 'bail|sometimes|string',
                 'pictures' => 'bail|required|array',
-                'pictures.*' => 'bail|required|string'
+                'pictures' => 'bail|required|array',
+                'pictures.*' => 'bail|required|base64image'
             ];
         } elseif ($verb === 'DELETE') {
             $id = $this->route('gallery');
-            $this->request->add(['id' => $id]);
+            $this->merge(['id' => $id]);
 
             return [
                 'id' => 'bail|required|string|exists:galleries,id'

@@ -292,8 +292,8 @@ jQuery(document).ready(function () {
                         $container.isotope('layout');
 
                         $('.to-load').unveil(200, function () {
-                            $(this).on('load', function () {                                    
-                                $(this).removeClass('loader');                                    
+                            $(this).on('load', function () {
+                                $(this).removeClass('loader');
                             });
                         });
 

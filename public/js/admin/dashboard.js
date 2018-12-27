@@ -6,6 +6,7 @@ jQuery(document).ready(function () {
         $pagination = $('.pagination'),
         userData = JSON.parse(localStorage.getItem('user')),
         token = userData.token,
+        loginURL = $('meta[name="url-admin-login"]').attr('content'),
         generatePagination = function (pageCount, itemActive = 1) {
             $pagination.empty().bootpag({
                 total: pageCount,
@@ -51,7 +52,7 @@ jQuery(document).ready(function () {
                 },
                 "columnDefs": [{
                         render: function (result, type, row) {
-                            return `<a class="btn btn-default btn-update" data-id="${row.id}"><em class="fa fa-pencil"></em></a>
+                            return `<a class="btn btn-default btn-update" href="${loginURL + '/gallery/'+row.id+'/update'}"><em class="fa fa-pencil"></em></a>
         <a class="btn btn-danger btn-delete" data-id="${row.id}" data-name="${row.name}"><em class="fa fa-trash"></em></a>`;
                         },
                         targets: 0,
@@ -185,7 +186,7 @@ jQuery(document).ready(function () {
             },
             success: function (result) {
                 if (result.code === 200) {
-                    window.location.href = $('meta[name="url-admin-login"]').attr('content');
+                    window.location.href = loginURL;
                 }
             },
             error: function (xhr,status,error) {
