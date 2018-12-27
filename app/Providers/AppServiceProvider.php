@@ -15,10 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /* $this->app->bind(
+        $this->app->bind(
             ExceptionHandler::class,
             Handler::class
-        ); */
+        );
     }
 
     /**
