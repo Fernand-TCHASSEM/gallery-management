@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
                 $mainPicture.attr('src', loaderURL).attr('data-src', pictures[0]).unveil();
 
                 html = '';
-                numberOfParents = Math.ceil((pictures.length - 1) / 3);
+                numberOfParents = Math.ceil((pictures.length) / 3);
                 limit = 1;
                 for (var i = 1; i <= numberOfParents; i++) {
                     html +='<div class="redex_blog_recent_post">';
