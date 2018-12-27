@@ -40,7 +40,7 @@ class UploadFileService
     {
         $filePaths = [];
 
-        Storage::makeDirectory('public/images');
+        Storage::makeDirectory('images');
 
         for ($i=0, $nbrBases = count($bases); $i < $nbrBases; $i++) { 
             $base = $bases[$i];

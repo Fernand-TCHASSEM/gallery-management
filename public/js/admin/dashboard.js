@@ -40,6 +40,10 @@ jQuery(document).ready(function () {
 
                             generatePagination(pageCount, requestedPage);
 
+                            urlToSet = $('meta[name="url-api-get-gallery"]').attr('content') + (requestedPage > 1 ? '?page='+requestedPage : '');
+
+                            history.replaceState({}, 'Dashboard', urlToSet);
+
                             $('#indicator').text(`Page ${requestedPage} of ${pageCount}`);
                         }
                         return result.data;
@@ -95,6 +99,17 @@ jQuery(document).ready(function () {
             $('#galleryId').val($this.data('id'));
             $('#modal-header').text('Delete the gallery ' + $this.data('name') + ' ?');
             $('#modalDeleteGallery').modal('show');
+        },
+        initPage = function () {
+            var currentURL = window.location.href,
+                currentURLParsed = new URL(currentURL),
+                page = currentURLParsed.searchParams.get('page');
+
+                if (page === null) {
+                    paginateCategories(pagineApiURL);
+                } else {
+                    paginateCategories(pagineApiURL + '?page=' + parseInt(page));
+                }
         };
 
     $('.username').text(userData.username);
@@ -179,6 +194,6 @@ jQuery(document).ready(function () {
         });
     });
 
-    paginateCategories(pagineApiURL);
+    initPage();
 
 });

@@ -12,6 +12,8 @@
 
     <meta name="url-admin-logout" content="{{ url('/admin/logout') }}">
 
+    <meta name="url-admin-dashboard" content="{{ url('/admin/dashboard') }}">
+
     <meta name="url-admin-login" content="{{ url('/admin') }}">
 
     <!-- Bootstrap CSS -->

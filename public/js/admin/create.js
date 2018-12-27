@@ -1,7 +1,8 @@
 jQuery(document).ready(function () {
 
     var $formGallery = $('form-gallery'),
-        $btnSubmit = $('#btn-submit');
+        $btnSubmit = $('#btn-submit'),
+        userData = JSON.parse(localStorage.getItem('user'));
 
     $formGallery.validate({
         rules: {
@@ -35,7 +36,7 @@ jQuery(document).ready(function () {
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Authorization': JSON.parse(localStorage.getItem('user')).token
+                        'Authorization': userData.token
                     },
                     data: JSON.stringify({
                         name: $('#title').val(),
@@ -92,10 +93,10 @@ jQuery(document).ready(function () {
         width: 495,
         plugins: [
             'advlist autolink lists link charmap print preview anchor textcolor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime table contextmenu paste code help wordcount'
+            'searchreplace visualblocks code fullscreen textcolor ',
+            'insertdatetime table contextmenu paste code wordcount'
         ],
-        toolbar: 'undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        toolbar: 'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tinymce.com/css/codepen.min.css'
@@ -106,6 +107,8 @@ jQuery(document).ready(function () {
         "target": "#uploads",
         "max": 10
     });
+
+    $('.username').text(userData.username);
 
     $('#secondary-pictures').on('click', '#containerPic img', function (event) {
         if (event.target && event.target.nodeName === "IMG") {
