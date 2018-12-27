@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Http\Requests\UploadFileRequest;
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 class UploadFileService
