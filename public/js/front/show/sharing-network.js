@@ -11,8 +11,7 @@ jQuery(document).ready(function () {
         shareHandle (url) {
             FB.ui({
                 method: 'share',
-                href: url,
-                app_id: 2235973836688408
+                href: url
             }, function(response){});
         }
     };
