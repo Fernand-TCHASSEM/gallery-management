@@ -12,6 +12,14 @@
 
     <meta name="url-hover-gallery" content="{{URL::asset('js/plugins/nsHover/imgs/lens.png')}}">
 
+    <meta name="url-page" content="{{URL::current()}}">
+
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
     <!-- Bootstrap CSS -->
     {!! Html::style('css/base/plugins.css') !!}
 
@@ -29,6 +37,25 @@
 </head>
 
 <body>
+
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId            : 'your-app-id',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.2'
+                });
+            };
+            
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
 
     <header class="radix_header_area">
         <div class="container">
@@ -84,9 +111,9 @@
                                     <h3>Share This</h3>
                                     <div class="radix_social_icon">
                                         <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#" id="facebook-share"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" id="twitter-share"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" id="instagram-share"><i class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -174,6 +201,8 @@
     {!! Html::script('js/plugins/slickHover/jquery.slickhover.js') !!}
 
     {!! Html::script('js/base/main.js') !!}
+
+    {!! Html::script('js/front/show/sharing-network.js') !!}
     
     {!! Html::script('js/front/show.js') !!}
     <!--End ALL JS -->

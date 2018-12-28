@@ -1,5 +1,6 @@
 jQuery(document).ready(function () {
     var apiURL = $('meta[name="url-api-get-gallery"]').attr('content'),
+        currentPageURL = $('meta[name="url-page"]').attr('content'),
         $mainPicture = $('#main-picture'),
         loaderURL = $('meta[name="url-loader-gallery"]').attr('content');
     $.ajax({
@@ -13,15 +14,18 @@ jQuery(document).ready(function () {
         success: function (result) {
             if (result.code === 200) {
                 result = result.item;
-                var pictures = JSON.parse(result.pictures);
-                $('#title').text(result.name);
+                var pictures = JSON.parse(result.pictures),
+                title = result.name,
+                description = result.description,
+                image = pictures[0];
+                $('#title').text(title);
                 $('#posted-date').prepend((new Date(result.posted_date)).toLocaleString('en-US', {
                     year: "numeric",
                     month: "long",
                     day: "numeric"
                 }));
-                $('#description').html(result.description);
-                $mainPicture.attr('src', loaderURL).attr('data-src', pictures[0]).unveil();
+                $('#description').html(description);
+                $mainPicture.attr('src', loaderURL).attr('data-src', image).unveil();
 
                 html = '';
                 numberOfParents = Math.ceil((pictures.length) / 3);
@@ -43,6 +47,12 @@ jQuery(document).ready(function () {
                         icon: 'js/plugins/slickHover/imgs/lens.png',
                         animateIn: true
                     });
+                });
+
+                $('#facebook-share').on('click', function (e) {
+                    e.preventDefault();
+                    facebookShare.setFacebookGraphMarkup(currentPageURL, title, description, image);
+                    facebookShare.shareHandle(currentPageURL);
                 });
             }
         },
